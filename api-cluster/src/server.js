@@ -2,7 +2,7 @@ import http from "http";
 const processId = process.pid;
 
 const server = http.createServer((request, response) => {
-    for (let index=0; index < 1e9; index ++);
+    for (let index=0; index < 1e7; index ++);
     return response.end(`handle by pid: ${processId} \n`);
 });
 
