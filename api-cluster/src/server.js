@@ -21,6 +21,6 @@ process.on("SIGTERM", () => {
 })
 
 
- setTimeout(() => {
-   process.exit(1)
- }, Math.random() * 1e4);
+//  setTimeout(() => {
+//    process.exit(1)
+//  }, Math.random() * 1e4);
