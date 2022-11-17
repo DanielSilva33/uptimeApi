@@ -1,24 +1,26 @@
-import http from "http";
+import express from "express";
 const processId = process.pid;
 
-const server = http.createServer((request, response) => {
-    for (let index=0; index < 1e7; index ++);
-    return response.end(`handle by pid: ${processId} \n`);
-});
+const app = express();
 
-server
-  .listen(3001)
-  .once("listening", () =>
-    console.log(`Server started in process ${processId}`)
-  );
-
-
-process.on("SIGTERM", () => {
-    console.log("Server ending", new Date().toISOString());
-    server.close(() => process.exit());
+app.get("/", (request, response) => {
+  for (let index=0; index < 1e7; index ++);
+  return response.end(`handle by pid: ${processId} \n`);
 })
 
 
-// setTimeout(() => {
-//   process.exit(1)
-// }, Math.random() * 1e4);
+app.listen(3001, () => {
+  console.log(`Server is running at 3001 with processID: ${processId}`);
+})
+
+
+// kill
+process.on("SIGTERM", () => {
+    console.log("Server ending", new Date().toISOString());
+    process.exit();
+})
+
+
+ setTimeout(() => {
+   process.exit(1)
+ }, Math.random() * 1e4);

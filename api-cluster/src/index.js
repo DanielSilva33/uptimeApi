@@ -19,7 +19,7 @@ const runPrimaryProcess = () => {
 }
 
 const runWorkerProcess = async () => {
-    await import('./server.js')
+    await import('./server.js');
 }
 
 cluster.isPrimary ? runPrimaryProcess() : runWorkerProcess();

@@ -13,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "autocannon": "^7.10.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
