@@ -14,7 +14,7 @@ app.listen(3001, () => {
 })
 
 
-// kill
+// kill - Graceful Shutdown
 process.on("SIGTERM", () => {
     console.log("Server ending", new Date().toISOString());
     process.exit();
