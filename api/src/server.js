@@ -10,7 +10,7 @@ app.get("/", (request, response) => {
 
 
 app.listen(3000, () => {
-  console.log(`Server is running at 3001 with processID: ${processId}`)
+  console.log(`Server is running at 3000 with processID: ${processId}`)
 })
 
 
